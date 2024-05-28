@@ -1,0 +1,20 @@
+.side-bar {
+  /* Box Model */
+  width: 200px;
+  height: 500px;
+  padding: 2em;
+  border-radius: 15px;
+  border: 1px solid white;
+
+  /* Position */
+  position: absolute;
+  top: 10%;
+  left: 50px;
+
+  /* Typography */
+  background-color: #17181cff;
+}
+
+.gut-report-btn {
+  margin-top: 2em;
+}

@@ -1,0 +1,121 @@
+/** Globally Accessible CSS Variables **/
+:root {
+  /* Colors */
+  /* Dominant */
+  --clr-eerie-black: #17181cff;
+
+  /* Complimentary */
+  --clr-slate600: #475569;
+  --clr-slate400: #94a3b8;
+  --clr-shade-dutch-white: rgb(121, 111, 95);
+
+  /* Accent */
+  --clr-dutch-white: #f3dfbfff;
+  --clr-cordovan: #8e4a49ff;
+  --clr-steel-blue: #2d82b7ff;
+
+  /* sizes */
+  --size-xxs: 0.5rem;
+  --size-xs: 0.75rem;
+  --size-sm: 0.875rem;
+  --size-base: 1rem;
+  --size-lg: 1.125rem;
+  --size-xl: 1.25rem;
+  --size-2xl: 1.5rem;
+  --size-3xl: 1.875rem;
+  --size-4xl: 2.25rem;
+  --size-5xl: 3rem;
+  --size-6xl: 3.75rem;
+  --size-7xl: 4.5rem;
+  --size-8xl: 6rem;
+  --size-9xl: 8rem;
+  --size-10xl: 10rem;
+}
+
+/******* CSS RESET ***** */
+
+/*** 
+      This document is used to apply 
+      global CSS resets to the html document
+  ***/
+
+/* Reset Box sizing  */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding on all elements, and
+  Reset the default line height  */
+* {
+  margin: 0;
+  padding: 0;
+  line-height: calc(
+    1em + 0.5rem
+  ); /* Use the font-size of the element as a base and add half the font-size of the html documet */
+}
+
+/** Enable Smooth scrolling **/
+html {
+  scroll-behavior: smooth; /** This adds a smooth scrolling behavior when users click on a link to a navigate to a different section of the page **/
+}
+
+/* Define a Universal Typography for your body */
+body {
+  /* Background */
+  background: var(--clr-eerie-black);
+
+  /* Typography  */
+  /* color: #f3dfbfff; */
+  color: white;
+
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Define Sensible Media Defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%; /*** Needs more understanding ***/
+}
+
+/** Inherit fonts for from controls **/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/** Word Wrapping **/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/** Reset the default button in your html document**/
+button {
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/** Style H1 **/
+h1 {
+  /* letter-spacing: 2px; */
+}
+
+/* Strong */
+strong {
+  color: var(--clr-cordovan);
+}
