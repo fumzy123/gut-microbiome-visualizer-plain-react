@@ -26,7 +26,9 @@ export default function SideBar() {
         </button>
         <button
           className="gut-report-btn"
-          onClick={() => setRotation([0, Math.PI / 4, 0])}
+          onClick={() =>
+            setRotation([0, THREE.MathUtils.degToRad(45), 0])
+          }
         >
           Gut Report 2
         </button>
