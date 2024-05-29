@@ -1,3 +1,6 @@
+// Import Libraries
+import { motion } from 'framer-motion-3d';
+
 // Imports Store
 import { useSideBarStore } from '../store/app-store';
 
@@ -12,7 +15,7 @@ export default function Experience() {
   return (
     <>
       {/* Stomach */}
-      <group rotation={rotation}>
+      <motion.group animate={{ rotateY: rotation[1] }}>
         <SmallAndLargeIntestine position={[-0.5, 0, 2]} />
         <SmallAndLargeIntestine
           position={[0.5, 0, -2]}
@@ -26,7 +29,7 @@ export default function Experience() {
           position={[-2, 0, -0.5]}
           rotation={[0, (3 * Math.PI) / 2, 0]}
         />
-      </group>
+      </motion.group>
     </>
   );
 }
