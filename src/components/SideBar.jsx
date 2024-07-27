@@ -4,13 +4,14 @@ import * as THREE from 'three';
 // Import Styling
 import '../styles/sideBar.css';
 
+// Import Store
 import { useSideBarStore } from '../store/app-store';
 
 export default function SideBar() {
   // Event Handler
   // const rotateGutCollection = () => {};
 
-  // Get the Setter Function for the rotation
+  // Get the Setter Function from the Global state store
   const setRotation = useSideBarStore((state) => state.setRotation);
 
   // ----------- Render ----------------
@@ -32,8 +33,22 @@ export default function SideBar() {
         >
           Gut Report 2
         </button>
-        <button className="gut-report-btn">Gut Report 3</button>
-        <button className="gut-report-btn">Gut Report 4</button>
+        <button
+          className="gut-report-btn"
+          onClick={() =>
+            setRotation([0, THREE.MathUtils.degToRad(180), 0])
+          }
+        >
+          Gut Report 3
+        </button>
+        <button
+          className="gut-report-btn"
+          onClick={() =>
+            setRotation([0, THREE.MathUtils.degToRad(270), 0])
+          }
+        >
+          Gut Report 4
+        </button>
       </div>
     </>
   );

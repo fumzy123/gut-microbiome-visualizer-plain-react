@@ -7,14 +7,35 @@ Source: https://sketchfab.com/3d-models/small-and-large-intestine-8a1ca8e3ca224c
 Title: Small and large intestine
 */
 
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { useGLTF } from '@react-three/drei';
+
+import * as THREE from 'three';
 
 export function SmallAndLargeIntestine(props) {
   // GLTF Hook
   const { nodes, materials } = useGLTF(
     '/models/small-and-large-intestine/scene.gltf'
   );
+
+  // console.log(props);
+  // console.log(materials);
+
+  // Create a new material instance for the small intestine with the same properties as the original material
+  const material = useMemo(() => {
+    const originalMaterial = materials.Default_Material_0;
+    const newMaterial = new THREE.MeshStandardMaterial();
+    newMaterial.copy(originalMaterial);
+
+    // Change the Color of the New Material
+    newMaterial.color = new THREE.Color(
+      props.color.r,
+      props.color.g,
+      props.color.b
+    );
+
+    return newMaterial;
+  }, [materials, props.color]);
 
   //--------------------- Render -----------------------------
   return (
@@ -33,7 +54,7 @@ export function SmallAndLargeIntestine(props) {
           </group>
           <mesh
             geometry={nodes.Tunntarm_Default_Material_0.geometry}
-            material={materials.Default_Material_0}
+            material={material}
             position={[14.166, 10.696, 1.169]}
             scale={0.1}
           />
